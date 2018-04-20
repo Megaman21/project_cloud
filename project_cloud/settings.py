@@ -120,17 +120,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "polls/static"),
-]
-
-STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MIDDLEWARE_CLASSES = [
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "polls/static"),
+# ]
+#
+# STATIC_URL = '/static/'
+#
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#
+# MIDDLEWARE_CLASSES = [
+#     # Simplified static file serving.
+#     # https://warehouse.python.org/project/whitenoise/
+#     'whitenoise.middleware.WhiteNoiseMiddleware',
+# ]
 STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
