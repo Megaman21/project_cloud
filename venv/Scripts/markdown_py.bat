@@ -1,0 +1,1 @@
+@"E:\8th Semester\Cloud\project_cloud\venv\Scripts\python.exe" "E:\8th Semester\Cloud\project_cloud\venv\Scripts\markdown_py" %*
