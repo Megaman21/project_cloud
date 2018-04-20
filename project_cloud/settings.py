@@ -25,7 +25,7 @@ SECRET_KEY = 'q*(=c46*7$0)!f$#3gx==dw+a-f2i(xve!lx1m^76x)e%e#wsc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['megamaninn.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['megmaninn.herokuapp.com','127.0.0.1']
 
 
 # Application definition
