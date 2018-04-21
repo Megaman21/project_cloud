@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import psycopg2
+
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -134,6 +136,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #     # https://warehouse.python.org/project/whitenoise/
 #     'whitenoise.middleware.WhiteNoiseMiddleware',
 # ]
+
 STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 
-DATABASES['default'] = dj_database_url.config(ssl_require=True) #db part
+
+# DATABASES['default'] = dj_database_url.config(ssl_require=True) #db part
+DATABASES['default'] = dj_database_url.config() #db part
