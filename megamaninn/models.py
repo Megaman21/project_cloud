@@ -15,3 +15,10 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+
+class Room(models.Model):
+    id=models.AutoField(primary_key=True)
+    price=models.PositiveIntegerField()
+
+    def __str__(self):
+        return self.id
