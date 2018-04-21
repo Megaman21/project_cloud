@@ -24,3 +24,11 @@ def home(request):
     }
 
     return HttpResponse(template.render(context,request))
+
+def signuppage(request):
+    template=loader.get_template('signup.html')
+    context= {
+
+    }
+
+    return HttpResponse(template.render(context,request))

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloud</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Article-List.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/Login-Form-Clean.css' %}">
+     <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Registration-Form-with-Photo.css' %}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navigation-clean-button" style="background-color:#c3b74f;font-size:20px;">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#" style="color:#f72b2b;">Megas' Inn</a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:#f72b2b;"><strong>Our Destinations</strong></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#">Local Destinations</a></li>
+                            <li role="presentation"><a href="#">International Destinations</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a href="booking.html" style="color:#f72b2b;"><strong>Book Room</strong></a></li>
+                    <li role="presentation"><a href="#" style="color:#f72b2b;"><strong>About </strong></a></li>
+                </ul>
+                <p class="navbar-text navbar-right actions"> <a class="navbar-link login" href="login.html" style="padding:30px;color:rgb(247,36,36);">Log In</a><a class="btn btn-default action-button" role="button" href="signup.html" style="font-size:20px;background-color:#eb3b60;">Sign Up</a></p>
+            </div>
+        </div>
+    </nav>
+    <div class="register-photo" style="height:650px;">
+        <div class="form-container">
+            <div class="image-holder" style="background-image:url(&quot;assets/img/hotel-bus-office.jpg&quot;);"></div>
+            <form method="post">
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                </div><a href="#" class="already">You already have an account? Login here.</a></form>
+        </div>
+    </div>
+    <div class="footer-dark" style="background-color:#c3b74f;">
+        <footer>
+            <div class="container">
+                <div class="row" style="background-color:#c3b74f;">
+                    <div class="col-md-6 col-md-push-6 item text">
+                        <h3 style="color:#f72b2b;">About the Company</h3>
+                        <p style="color:#f72b2b;">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col-md-3 col-md-pull-6 col-sm-4 item">
+                        <ul>
+                            <li><i class="glyphicon glyphicon-earphone" style="width:30px;color:#f72b2b;"></i>
+                                <label style="color:#f72b2b;">111 555 666</label>
+                            </li>
+                            <li><i class="glyphicon glyphicon-envelope" style="width:30px;color:#f72b2b;"></i>
+                                <label style="color:#f72b2b;">111 555 666</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 col-sm-4 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright" style="color:#f72b2b;"><strong>Mega's Inn© 2018</strong></p>
+            </div>
+        </footer>
+    </div>
+     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/bs-animation.js'%}"></script>
+    <script src="{% static 'js/myjs.js' %}"></script>
+</body>
+
+</html>
