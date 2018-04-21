@@ -8,3 +8,19 @@ def index(request):
     }
 
     return HttpResponse(template.render(context,request))
+
+def loginpage(request):
+    template=loader.get_template('login.html')
+    context= {
+
+    }
+
+    return HttpResponse(template.render(context,request))
+
+def home(request):
+    template=loader.get_template('homepage.html')
+    context= {
+
+    }
+
+    return HttpResponse(template.render(context,request))

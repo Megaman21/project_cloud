@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+ {% load staticfiles %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>megaman'sinn</title>
+
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Article-List.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Footer-Dark.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'css/Login-Form-Clean.css' %}">
+     <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+    <div style="background-color:#363739;">
+        <nav class="navbar navbar-default navigation-clean-button" style="background-color:#c3b74f;font-size:20px;">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#" style="color:#ffffff;">Megas' Inn</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:#f72b2b;"><strong>Our Destinations</strong></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a href="#">Local Destinations</a></li>
+                                <li role="presentation"><a href="#">International Destinations</a></li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="booking.html" style="color:#f72b2b;"><strong>Book Room</strong></a></li>
+                        <li role="presentation"><a href="#" style="color:#f72b2b;"><strong>About </strong></a></li>
+                    </ul>
+                   <p class="navbar-text navbar-right actions">
+                       <a class="navbar-link login" href="login.html" style="padding:30px;color:rgb(247,36,36);">Log In</a>
+                       <a class="btn btn-default action-button" role="button" href="signup.html" style="font-size:20px;background-color:#eb3b60;">Sign Up</a>
+                   </p>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <div class="carousel slide" data-ride="carousel" data-interval="1300" id="carousel-1" style="height:400px;">
+            <div class="carousel-inner" role="listbox" style="height:350px;">
+                <div class="item active"><img class="img-responsive" src="{% static 'img/hotel_main.jpg'%}" alt="Slide Image" width="850px" height="350px" style="height:400px;"></div>
+                <div class="item"><img class="img-responsive" src="{% static 'img/room1.jpg'%}" alt="Slide Image" width="850px" height="350px" style="height:400px;"></div>
+                <div class="item"><img class="img-responsive" src="{% static 'img/premier-room2.jpg'%}" alt="Slide Image" width="850px" height="350px" style="height:400px;"></div>
+            </div>
+            <div><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel-1" role="button"
+                data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a></div>
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-1" data-slide-to="1"></li>
+                <li data-target="#carousel-1" data-slide-to="2"></li>
+            </ol>
+        </div>
+    </div>
+    <div style="margin-top:20px;">
+        <div class="container">
+            <div class="row" style="background-color:#dfe8ee;">
+                <div class="col-md-6" style="background-color:#dfe8ee;">
+                    <h1 style="color:#0072c6;"><strong>Discover Europe</strong></h1>
+                    <p><strong>With Multiple daily flights to France, Italy, Rome and other popular European Countries discover Europe.</strong></p>
+                </div>
+                <div class="col-md-6"><img src="assets/img/europe.jpg" style="width:485px;height:172px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="article-list" style="margin-top:30px;">
+        <div class="container">
+            <div class="row articles">
+                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="assets/img/crew.jpg" style="height:195.234px;">
+                    <h3 class="name">Always at your service</h3>
+                    <p class="description">Our team is active and available 24/7 to provide you best services.</p>
+                    <a href="#" class="action"></a>
+                </div>
+                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="assets/img/plane.jpg" style="height:195.234px;">
+                    <h3 class="name">20+ International and 30+ Domestic Flights</h3>
+                    <p class="description">With our 20+ International and 30+ Domestic flights everyday travel to your desired location cheaply and safely.</p>
+                    <a href="#" class="action"></a>
+                </div>
+                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="assets/img/business.jpg" style="height:195.234px;">
+                    <h3 class="name">We Make Your Trip Memorable</h3>
+                    <p class="description">Our team works day and night to provide you best services. to make your trip comfortable and memorable</p>
+                    <a href="#" class="action"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dark" style="background-color:#c3b74f;">
+        <footer>
+            <div class="container">
+                <div class="row" style="background-color:#c3b74f;">
+                    <div class="col-md-6 col-md-push-6 item text">
+                        <h3 style="color:#f72b2b;">About the Company</h3>
+                        <p style="color:#f72b2b;">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col-md-3 col-md-pull-6 col-sm-4 item">
+                        <ul>
+                            <li><i class="glyphicon glyphicon-earphone" style="width:30px;color:#f72b2b;"></i>
+                                <label style="color:#f72b2b;">111 555 666</label>
+                            </li>
+                            <li><i class="glyphicon glyphicon-envelope" style="width:30px;color:#f72b2b;"></i>
+                                <label style="color:#f72b2b;">111 555 666</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 col-sm-4 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright" style="color:#f72b2b;"><strong>Mega's Inn© 2018</strong></p>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/bs-animation.js'%}"></script>
+    <script src="{% static 'js/myjs.js' %}"></script>
+</body>
+
+</html>
