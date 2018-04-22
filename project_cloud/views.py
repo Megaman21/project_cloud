@@ -27,12 +27,28 @@ def home(request):
     return HttpResponse(template.render(context,request))
 
 def signuppage(request):
-    template=loader.get_template('signup.html')
-    context= {
+    if request.method == "GET":
+     template=loader.get_template('signup.html')
+     context= {
 
-    }
+     }
 
-    return HttpResponse(template.render(context,request))
+     return HttpResponse(template.render(context,request))
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+
+        form.save()
+        return redirect('login.html')
+        # else:
+        #     form = SignUpForm()
+        #     arg = {'forms': form}
+        #     return render(request, 'signup.html', arg)
+    else:
+        form = SignUpForm()
+        args = {'forms': form}
+        return render(request, 'signup.html', args)
+
+
 
 def bookpage(request):
     template=loader.get_template('booking.html')

@@ -44,7 +44,7 @@
     <div class="register-photo" style="height:650px;">
         <div class="form-container">
             <div class="image-holder" style="background-image:url({% static 'img/hotel-bus-office.jpg' %})"></div>
-            <form method="post" action="{% url 'register' %}">
+            <form method="post" >
                {% csrf_token %}
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
                 <div class="form-group">
