@@ -52,13 +52,13 @@ def reviewpage(request):
 def doregister(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login.html')
-        else:
-            form = SignUpForm()
-            arg = {'forms': form}
-            return render(request, 'signup.html', arg)
+
+        form.save()
+        return redirect('login.html')
+        # else:
+        #     form = SignUpForm()
+        #     arg = {'forms': form}
+        #     return render(request, 'signup.html', arg)
     else:
         form = SignUpForm()
         args = {'forms': form}
