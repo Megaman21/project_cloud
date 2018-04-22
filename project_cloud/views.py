@@ -26,6 +26,15 @@ def home(request):
 
     return HttpResponse(template.render(context,request))
 
+def editpage(request):
+    template=loader.get_template('edit_profile.html')
+    context= {
+
+    }
+
+    return HttpResponse(template.render(context,request))
+
+
 def signuppage(request):
     if request.method == "GET":
      template=loader.get_template('signup.html')

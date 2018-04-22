@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+ {% load staticfiles %}
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/editcss.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+		   <link rel="stylesheet" href="{% static 'css/bootstrapx.min.css' %}">
+			 <link rel="stylesheet" href="{% static 'css/Footer-Dark.css' %}">
+   <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
+</head>
+<body>
+<div style="background-color:#363739;">
+        <nav class="navbar navbar-default navigation-clean-button" style="background-color:#c3b74f;font-size:20px;">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#" style="color:#f72b2b;">Megas' Inn</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color:#f72b2b;"><strong>Our Destinations</strong></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a href="#">Local Destinations</a></li>
+                                <li role="presentation"><a href="#">International Destinations</a></li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="booking.html" style="color:#f72b2b;"><strong>Book Room</strong></a></li>
+                        <li role="presentation"><a href="#" style="color:#f72b2b;"><strong>About </strong></a></li>
+                    </ul>
+                    <p class="navbar-text navbar-right actions"> <a class="navbar-link login" href="login.html" style="padding:30px;color:rgb(247,36,36);">Customer</a><a class="btn btn-default action-button" role="button" href="signup.html" style="font-size:20px;background-color:#eb3b60;">Sign Up</a></p>
+                </div>
+            </div>
+        </nav>
+    </div>
+<div id="sc-edprofile">
+  <h1>Edit Profile Form</h1>
+  <div class="sc-container">
+  <img class="img-responsive" style="width:200px;height:200px;">
+  <button class="btn btn-primary btn-lg"  type="button">Change Picture</button>
+    <input type="text" placeholder="Username" />
+    <input type="text" placeholder="Email Address" />
+    <input type="password" placeholder="Password" />
+   
+    <input type="submit" value="Register" />
+  </div>
+</div>
+<div class="footer-dark" style="background-color:#c3b74f;">
+        <footer>
+            <div class="container">
+                <div class="row" style="background-color:#c3b74f;">
+                    <div class="col-md-6 col-md-push-6 item text">
+                        <h3 style="color:#f72b2b;">About the Company</h3>
+                        <p style="color:#f72b2b;">Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col-md-3 col-md-pull-6 col-sm-4 item">
+                        <ul>
+                            <li><i class="glyphicon glyphicon-earphone" style="width:30px;color:#f72b2b;"></i>
+                                <label style="color:#f72b2b;">111 555 666</label>
+                            </li>
+                            <li><i class="glyphicon glyphicon-envelope" style="width:30px;color:#f72b2b;"></i>
+                                <label style="color:#f72b2b;">111 555 666</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 col-sm-4 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright" style="color:#f72b2b;"><strong>Mega's Inn© 2018</strong></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
