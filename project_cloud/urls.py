@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.contrib.auth.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,6 @@ urlpatterns = [
     url(r'^$',views.home,name='home'),
     url('login', views.loginpage, name='login'),
     url('signup', views.signuppage, name='signup')
+    # url('login', views.loginpage, {'template_name':'login.html'})
+
 ]
