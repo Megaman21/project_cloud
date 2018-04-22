@@ -49,7 +49,7 @@ def reviewpage(request):
 
     return HttpResponse(template.render(context,request))
 
-def signup(request):
+def doregister(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
