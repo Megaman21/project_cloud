@@ -1,6 +1,7 @@
 from django.http import HttpResponse
+from django.shortcuts import redirect, render
 from django.template import loader
-
+from megamaninn.forms import SignUpForm
 def index(request):
     template=loader.get_template('test.html')
     context= {
@@ -47,3 +48,18 @@ def reviewpage(request):
     }
 
     return HttpResponse(template.render(context,request))
+
+def signup(request):
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login.html')
+        else:
+            form = SignUpForm()
+            arg = {'forms': form}
+            return render(request, 'signup.html', arg)
+    else:
+        form = SignUpForm()
+        args = {'forms': form}
+        return render(request, 'signup.html', args)
