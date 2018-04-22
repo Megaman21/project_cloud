@@ -48,13 +48,13 @@
                {% csrf_token %}
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
                 <div class="form-group">
-                    <input class="form-control" type="text" id="{{ form.name.id_for_label }}" name="{{ form.name.name}}" placeholder="Enter Name">
+                    <input class="form-control" type="text" id="{{ forms.name.id_for_label }}" name="{{ forms.name.name}}" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="email"  id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Email">
+                    <input class="form-control" type="email"  id="{{ forms.email.id_for_label }}" name="{{ forms.email.name }}" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="password" id="{{ form.password.id_for_label }}" name="{{ form.password.name }}" placeholder="Password">
+                    <input class="form-control" type="password" id="{{ forms.password.id_for_label }}" name="{{ forms.password.name }}" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)">
