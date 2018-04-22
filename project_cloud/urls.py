@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^$',views.home,name='home'),
     url('login', views.loginpage, name='login'),
     url('signup', views.signuppage, name='signup'),
-    url('bookpage', views.bookpage, name='booking_page')
+    url('bookpage', views.bookpage, name='bookpage')
 
     # url('login', views.loginpage, {'template_name':'login.html'})
 
