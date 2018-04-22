@@ -40,3 +40,10 @@ def bookpage(request):
     }
 
     return HttpResponse(template.render(context,request))
+def reviewpage(request):
+    template=loader.get_template('review.html')
+    context= {
+
+    }
+
+    return HttpResponse(template.render(context,request))
