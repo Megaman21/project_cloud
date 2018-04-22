@@ -45,7 +45,7 @@
         <div class="form-container">
             <div class="image-holder" style="background-image:url({% static 'img/hotel-bus-office.jpg' %})"></div>
             <form method="post" action="{% url 'register' %}">
-                {% csrf_token %}
+{#                {% csrf_token %}#}
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
                 <div class="form-group">
                     <input class="form-control" type="text" id="{{ form.name.id_for_label }}" name="{{ form.name.name}}" placeholder="Enter Name">

@@ -4,7 +4,7 @@ from megamaninn.models import Customer
 
 
 class SignUpForm(UserCreationForm):
-    
+
 
     class Meta:
         model = Customer
