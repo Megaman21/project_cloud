@@ -10,4 +10,4 @@ class SignUpForm(ModelForm):
 
     class Meta:
         model = Customer
-        fields = '_all_'
+        fields = ('_all_',)
