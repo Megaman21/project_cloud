@@ -41,8 +41,8 @@
             <h2 class="text-center">Tell us How you feel</h2>
             <div class="form-group has-success"><span class="label label-default" style="font-size:20px;">Rate Hotel:</span>
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">RATING <span class="caret"></span></button>
-                    <ul class="dropdown-menu" role="menu">
+                    <button class="btn btn-primary dropdown-toggle" name="rating" data-toggle="dropdown" aria-expanded="false" type="button">RATING <span class="caret"></span></button>
+                    <ul class="dropdown-menu"  role="menu">
                         <li role="presentation"><a href="#">1 </a></li>
                         <li role="presentation"><a href="#">2 </a></li>
                         <li role="presentation"><a href="#">3 </a></li>
@@ -58,6 +58,64 @@
                 <button class="btn btn-primary" type="submit">Send </button>
             </div>
         </form>
+    </div>
+    <div class="container">
+        {% for review in reviews_all %}
+                            <div class="row">
+                                <div class="card card-nav-tabs">
+                                    {% if review.rating is 5 %}
+                                        <div class="card-header card-header-success text-center">
+                                           <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked "></span>
+<span class="fa fa-star checked "></span>
+<span class="fa fa-star checked"></span>
+                                        </div>
+                                    {% elif review.rating is 4 %}
+                                        <div class="card-header card-header-primary text-center">
+                                            <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked "></span>
+<span class="fa fa-star checked "></span>
+<span class="fa fa-star"></span>
+                                        </div>
+                                    {% elif review.rating is 3 %}
+                                        <div class="card-header card-header-info text-center">
+                                           <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+                                        </div>
+                                    {% elif review.rating is 2 %}
+                                        <div class="card-header card-header-warning text-center">
+                                            <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+                                        </div>
+                                    {% elif review.rating is 1 %}
+                                        <div class="card-header card-header-danger text-center">
+                                            <span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star"></span>
+                                        </div>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p>{{ review.description }}</p>
+                                            <footer class="blockquote-footer">{{ review.user_id.first_name }}</footer>
+                                        </blockquote>
+                                    </div>
+{#                                    <div class="card-footer text-muted">{{ review.date|naturalday }}#}
+{#                                    </div>#}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
     </div>
 
     <footer style="height:180px;margin-top:10px;background-color:rgb(255,165,0);">

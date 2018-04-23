@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 from megamaninn.forms import SignUpForm
+from megamaninn.models import Review
 
 
 def index(request):
@@ -95,12 +96,27 @@ def bookpage(request):
 
 
 def reviewpage(request):
-    template = loader.get_template('review.html')
-    context = {
+    # template = loader.get_template('review.html')
+    # context = {
+    #
+    # }
+    #
+    # return HttpResponse(template.render(context, request))
+    # reviews_all=Review.objects.all()
+    user=request.user
+    if request.method == 'POST' and request.user.is_authenticated:
+        rating = request.POST['rating']
+        description = request.POST['message']
+        reviewx=Review(user_id=user,review=description,rating=rating)
+        reviewx.save()
+        return render(request, 'homepage.html')
+    if request.user.is_authenticated:
+        reviews_all = Review.objects.all()
+        return render(request, 'review.html',
+                      { 'reviews_all': reviews_all})
 
-    }
 
-    return HttpResponse(template.render(context, request))
+
 
 
 def doregister(request):
