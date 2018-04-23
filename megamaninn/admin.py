@@ -18,7 +18,7 @@ class ProfileInLine(admin.StackedInline):
 class CustomUserAdmin(UserAdmin):
     inlines=(ProfileInLine,)
 
-    def get_inline_formsets(self, request, obj=None):
+    def get_inline_instances(self, request, obj=None):
         if not obj:
             return list()
 
