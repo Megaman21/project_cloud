@@ -66,10 +66,10 @@
         </form>
     </div>
     <div class="container">
-        {% for review in reviews_all %}
+        {% for Review in reviews_all %}
                             <div class="row">
                                 <div class="card card-nav-tabs">
-                                    {% if review.rating is 5 %}
+                                    {% if Review.rating is 5 %}
                                         <div class="card-header card-header-success text-center">
                                            <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -77,7 +77,7 @@
 <span class="fa fa-star checked "></span>
 <span class="fa fa-star checked"></span>
                                         </div>
-                                    {% elif review.rating is 4 %}
+                                    {% elif Review.rating is 4 %}
                                         <div class="card-header card-header-primary text-center">
                                             <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -85,7 +85,7 @@
 <span class="fa fa-star checked "></span>
 <span class="fa fa-star"></span>
                                         </div>
-                                    {% elif review.rating is 3 %}
+                                    {% elif Review.rating is 3 %}
                                         <div class="card-header card-header-info text-center">
                                            <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -93,7 +93,7 @@
 <span class="fa fa-star "></span>
 <span class="fa fa-star"></span>
                                         </div>
-                                    {% elif review.rating is 2 %}
+                                    {% elif Review.rating is 2 %}
                                         <div class="card-header card-header-warning text-center">
                                             <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -101,7 +101,7 @@
 <span class="fa fa-star "></span>
 <span class="fa fa-star"></span>
                                         </div>
-                                    {% elif review.rating is 1 %}
+                                    {% elif Review.rating is 1 %}
                                         <div class="card-header card-header-danger text-center">
                                             <span class="fa fa-star checked"></span>
 <span class="fa fa-star "></span>
@@ -112,7 +112,7 @@
                                     {% endif %}
                                     <div class="card-body">
                                         <blockquote class="blockquote mb-0">
-                                            <p>{{ review.description }}</p>
+                                            <p>{{ Review.review }}</p>
                                             <footer class="blockquote-footer">{{ review.user_id.first_name }}</footer>
                                         </blockquote>
                                     </div>
