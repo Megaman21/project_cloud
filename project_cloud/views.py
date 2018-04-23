@@ -64,6 +64,8 @@ def editpage(request):
         user.last_name=lastname
         user.email=email
         user.save()
+        obj=request.user
+        return render(request,'edit_profile.html',{'user':obj})
 
 def signuppage(request):
     if request.method == "GET":
