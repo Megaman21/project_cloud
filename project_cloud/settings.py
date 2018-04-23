@@ -16,6 +16,8 @@ import psycopg2
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import cloudinary
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'project_cloud',
     'megamaninn',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +145,15 @@ STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 
 # DATABASES['default'] = dj_database_url.config(ssl_require=True) #db part
 DATABASES['default'] = dj_database_url.config() #db part
+
+
+CLOUD_NAME="dwpiltjy2"
+API_KEY="276561557131791"
+API_SECRET="RGUyq9aTsKyd8x0L_rUhe9zQ19E"
+
+cloudinary.config(
+    cloud_name="dwpiltjy2",
+    api_key="276561557131791",
+    api_secret="RGUyq9aTsKyd8x0L_rUhe9zQ19E"
+
+)
