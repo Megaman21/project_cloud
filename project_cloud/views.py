@@ -56,15 +56,16 @@ def editpage(request):
         return render(request, 'edit_profile.html', {'user': user})
     if request.method == "POST":
         # user=request.user
+        objx = request.user
         firstname=request.POST['firstname']
         lastname=request.POST['lastname']
         email=request.POST['email']
-        user = User.objects.get(username=email)
+        user = User.objects.get(username=objx.email)
         user.first_name=firstname
         user.last_name=lastname
         user.email=email
         user.save()
-        obj=request.user
+        obj = request.user
         return render(request,'edit_profile.html',{'user':obj})
 
 def signuppage(request):
