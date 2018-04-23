@@ -44,6 +44,7 @@
     </nav>
      <div class="contact-clean">
         <form method="post">
+             {% csrf_token %}
             <h2 class="text-center">Tell us How you feel</h2>
             <div class="form-group has-success"><span class="label label-default" style="font-size:20px;">Rate Hotel:</span>
                 <div class="dropdown">
