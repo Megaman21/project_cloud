@@ -54,6 +54,16 @@ def editpage(request):
     if request.method == "GET":
         user = request.user
         return render(request, 'edit_profile.html', {'user': user})
+    if request.method=="POST":
+        # user=request.user
+        firstname=request.POST['firstname']
+        lastname=request.POST['lastname']
+        email=request.POST['email']
+        user = User.objects.get(username=email)
+        user.first_name=firstname
+        user.last_name=lastname
+        user.email=email
+        user.save()
 
 def signuppage(request):
     if request.method == "GET":
