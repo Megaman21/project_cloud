@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- {% load staticfiles %}
+{% load staticfiles %}
 <html>
 
 <head>
@@ -16,145 +16,157 @@
 
     <link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-     <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
-     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <style>
-.checked {
-    color: orange;
-}
-</style>
+        .checked {
+            color: orange;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navigation-clean-button" style="background-color:#ffc107;">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Mega's Inn</a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-left">
-                    <li role="presentation" data-bs-hover-animate="pulse"><a href="home.html" style="color:rgb(137,13,73);font-size:20px;">Home </a></li>
-                    <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="#" style="color:rgb(137,13,73);font-size:20px;">Book Room</a></li>
-                     <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="#" style="color:rgb(137,13,73);font-size:20px;">Review</a></li>
-                    <li role="presentation" data-bs-hover-animate="pulse"><a href="about.html" style="color:rgb(137,13,73);font-size:20px;">About </a></li>
-                </ul>
-                <p class="navbar-text navbar-right actions" style="font-size:20px;"><a class="navbar-link login" style="padding:30px;">Customer </a> <a class="btn btn-default action-button" role="button" href="home.html" style="font-size:20px;background-color:#eb3b60;">Sign Out</a></p>
-            </div>
-        </div>
-    </nav>
-     <div class="contact-clean">
-        <form method="post">
-             {% csrf_token %}
-            <h2 class="text-center">Tell us How you feel</h2>
-            <div class="form-group has-success"><span class="label label-default" style="font-size:20px;">Rate Hotel:</span>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" name="rating" data-toggle="dropdown" aria-expanded="false" type="button">RATING <span class="caret"></span></button>
-                    <ul class="dropdown-menu"  role="menu">
-                        <li role="presentation"><a href="#">1 </a></li>
-                        <li role="presentation"><a href="#">2 </a></li>
-                        <li role="presentation"><a href="#">3 </a></li>
-                        <li role="presentation"><a href="#">4 </a></li>
-                        <li role="presentation"><a href="#">5</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" rows="14" name="message" placeholder="Comments"></textarea>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">Send </button>
-            </div>
-        </form>
-    </div>
+<nav class="navbar navbar-default navigation-clean-button" style="background-color:#ffc107;">
     <div class="container">
-        {% for Review in reviews_all %}
-                            <div class="row">
-                                <div class="card card-nav-tabs">
-                                    {% if Review.rating is 5 %}
-                                        <div class="card-header card-header-success text-center">
-                                           <span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star checked"></span>
-                                        </div>
-                                    {% elif Review.rating is 4 %}
-                                        <div class="card-header card-header-primary text-center">
-                                            <span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star"></span>
-                                        </div>
-                                    {% elif Review.rating is 3 %}
-                                        <div class="card-header card-header-info text-center">
-                                           <span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star "></span>
-<span class="fa fa-star"></span>
-                                        </div>
-                                    {% elif Review.rating is 2 %}
-                                        <div class="card-header card-header-warning text-center">
-                                            <span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star "></span>
-<span class="fa fa-star "></span>
-<span class="fa fa-star"></span>
-                                        </div>
-                                    {% elif Review.rating is 1 %}
-                                        <div class="card-header card-header-danger text-center">
-                                            <span class="fa fa-star checked"></span>
-<span class="fa fa-star "></span>
-<span class="fa fa-star "></span>
-<span class="fa fa-star "></span>
-<span class="fa fa-star"></span>
-                                        </div>
-                                    {% endif %}
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p>{{ Review.review }}</p>
-                                            <footer class="blockquote-footer">{{ Review.user_id.user.first_name }}</footer>
-                                        </blockquote>
-                                    </div>
-{#                                    <div class="card-footer text-muted">{{ review.date|naturalday }}#}
-{#                                    </div>#}
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
+        <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Mega's Inn</a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+                    class="icon-bar"></span></button>
+        </div>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li role="presentation" data-bs-hover-animate="pulse"><a href="home.html"
+                                                                         style="color:rgb(137,13,73);font-size:20px;">Home </a>
+                </li>
+                <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="#"
+                                                                                        style="color:rgb(137,13,73);font-size:20px;">Book
+                    Room</a></li>
+                <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="#"
+                                                                                        style="color:rgb(137,13,73);font-size:20px;">Review</a>
+                </li>
+                <li role="presentation" data-bs-hover-animate="pulse"><a href="about.html"
+                                                                         style="color:rgb(137,13,73);font-size:20px;">About </a>
+                </li>
+            </ul>
+            <p class="navbar-text navbar-right actions" style="font-size:20px;"><a class="navbar-link login"
+                                                                                   style="padding:30px;">Customer </a>
+                <a class="btn btn-default action-button" role="button" href="home.html"
+                   style="font-size:20px;background-color:#eb3b60;">Sign Out</a></p>
+        </div>
     </div>
-
-    <footer style="height:180px;margin-top:10px;background-color:rgb(255,165,0);">
+</nav>
+<div class="contact-clean">
+    <form method="post">
+        {% csrf_token %}
+        <h2 class="text-center">Tell us How you feel</h2>
+        <h3 class="text-left"> Rate Hotel </h3>
+        <select name="rating">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <div class="form-group">
+            <textarea class="form-control" rows="14" name="message" placeholder="Comments"></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    {% for Review in reviews_all %}
         <div class="row">
-            <div class="col-md-4 col-sm-6 footer-navigation">
-                <h3><a href="#" style="color:#1f2021;">Mega's Inn</a></h3>
-                <p class="company-name" style="color:#1f2021;">Mega's Inn© 1985</p>
-            </div>
-            <div class="col-md-4 col-sm-6 footer-contacts">
-                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-                    <p style="color:#1f2021;"><span class="new-line-span">21 Milaad Street</span> Lahore, Pakistan</p>
+            <div class="card card-nav-tabs">
+                {% if Review.rating is 5 %}
+                    <div class="card-header card-header-success text-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                {% elif Review.rating is 4 %}
+                    <div class="card-header card-header-primary text-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                {% elif Review.rating is 3 %}
+                    <div class="card-header card-header-info text-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                {% elif Review.rating is 2 %}
+                    <div class="card-header card-header-warning text-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                {% elif Review.rating is 1 %}
+                    <div class="card-header card-header-danger text-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                {% endif %}
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>{{ Review.review }}</p>
+                        <footer class="blockquote-footer">{{ Review.user_id.user.first_name }}</footer>
+                    </blockquote>
                 </div>
-                <div><i class="fa fa-phone footer-contacts-icon"></i>
-                    <p class="footer-center-info email text-left" style="color:#1f2021;"> +1 555 123456</p>
-                </div>
-                <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                    <p style="color:#1f2021;"> support@shojo.com</p>
-                </div>
-            </div>
-            <div class="clearfix visible-sm-block"></div>
-            <div class="col-md-4 footer-about">
-                <h4 style="color:#1f2021;">About the company</h4>
-                <p style="color:#1f2021;"> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-                </p>
-                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+                {#                                    <div class="card-footer text-muted">{{ review.date|naturalday }}#}
+                {#                                    </div>#}
             </div>
         </div>
-    </footer>
-      <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/bs-animation.js'%}"></script>
-    <script src="{% static 'js/myjs.js' %}"></script>
+    {% endfor %}
+</div>
+</div>
+
+<footer style="height:180px;margin-top:10px;background-color:rgb(255,165,0);">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 footer-navigation">
+            <h3><a href="#" style="color:#1f2021;">Mega's Inn</a></h3>
+            <p class="company-name" style="color:#1f2021;">Mega's Inn© 1985</p>
+        </div>
+        <div class="col-md-4 col-sm-6 footer-contacts">
+            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                <p style="color:#1f2021;"><span class="new-line-span">21 Milaad Street</span> Lahore, Pakistan</p>
+            </div>
+            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                <p class="footer-center-info email text-left" style="color:#1f2021;"> +1 555 123456</p>
+            </div>
+            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                <p style="color:#1f2021;"> support@shojo.com</p>
+            </div>
+        </div>
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-md-4 footer-about">
+            <h4 style="color:#1f2021;">About the company</h4>
+            <p style="color:#1f2021;"> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis
+                velit, eu auctor lacus vehicula sit amet.
+            </p>
+            <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                    class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i
+                    class="fa fa-github"></i></a></div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bs-animation.js' %}"></script>
+<script src="{% static 'js/myjs.js' %}"></script>
 
 </body>
 
