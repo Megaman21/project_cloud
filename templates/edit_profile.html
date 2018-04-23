@@ -69,16 +69,16 @@
                     <hr>
                     <div class="form-row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname"></div>
+                            <div class="form-group"><label>Firstname </label><input class="form-control" value="{{ user.first_name }}" type="text" name="firstname"></div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Lastname </label><input class="form-control" type="text" name="lastname"></div>
+                            <div class="form-group"><label>Lastname </label><input class="form-control" type="text" name="lastname" value="{{ user.last_name }}"></div>
                         </div>
                     </div>
-                    <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
+                    <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email" value="{{ user.email }}"></div>
                     <div class="form-row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group"><label>Password </label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                            <div class="form-group"><label>Password </label><input class="form-control" type="password" name="password" autocomplete="off" required="" value="{{ user.password }}"></div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="form-group"><label>Confirm Password</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>

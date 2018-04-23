@@ -30,7 +30,7 @@ def loginpage(request):
             login(request, user)
             return render(request, 'homepage.html')
         else:
-            return render(request,'login.html')
+            return render(request, 'login.html')
 
     return HttpResponse(template.render(context, request))
 
@@ -45,13 +45,15 @@ def home(request):
 
 
 def editpage(request):
-    template = loader.get_template('edit_profile.html')
-    context = {
-
-    }
-
-    return HttpResponse(template.render(context, request))
-
+    # template = loader.get_template('edit_profile.html')
+    # context = {
+    #
+    # }
+    #
+    # return HttpResponse(template.render(context, request))
+    if request.method == "GET":
+        user = request.user
+        return render(request, 'edit_profile.html', {'user': user})
 
 def signuppage(request):
     if request.method == "GET":
@@ -103,20 +105,17 @@ def reviewpage(request):
     #
     # return HttpResponse(template.render(context, request))
     # reviews_all=Review.objects.all()
-    user=request.user
+    user = request.user
     if request.method == 'POST' and request.user.is_authenticated:
         rating = request.POST['rating']
         description = request.POST['message']
-        reviewx=Review(user_id=user,review=description,rating=rating)
+        reviewx = Review(user_id=user, review=description, rating=rating)
         reviewx.save()
         return render(request, 'homepage.html')
     if request.user.is_authenticated:
         reviews_all = Review.objects.all()
         return render(request, 'review.html',
-                      { 'reviews_all': reviews_all})
-
-
-
+                      {'reviews_all': reviews_all})
 
 
 def doregister(request):
