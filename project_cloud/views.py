@@ -1,3 +1,5 @@
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
@@ -44,20 +46,27 @@ def signuppage(request):
 
      return HttpResponse(template.render(context,request))
     if request.method == "POST":
-        form = SignUpForm(request.POST)
+        name=request.POST['name']
+        email=request.POST['email']
+        password=request.POST['password']
+        username=email
 
-        form.save()
-        return redirect('login.html')
-        # else:
-        #     form = SignUpForm()
-        #     arg = {'forms': form}
-        #     return render(request, 'signup.html', arg)
+        firstname=name.strip().split(' ')[0]
+        lastname=' '.join((name+' ').split(' ')[1:]).strip()
+
+        if username and password:
+            user, created=User.objects.get_or_create(username=username,email=email,first_name=firstname,last_name=lastname)
+
+            if created:
+                user.set_password(password)
+                user.save()
+
+            user=authenticate(username=username, password=password)
+            login(request,user)
+
+            return render(request,'homepage.html')
     else:
-        form = SignUpForm()
-        args = {'forms': form}
-        return render(request, 'signup.html', args)
-
-
+        return render(request,'signup.html')
 
 def bookpage(request):
     template=loader.get_template('booking.html')
