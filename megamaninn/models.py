@@ -13,77 +13,84 @@ from django.dispatch import receiver
 
 
 class profile(models.Model):
-    user=models.OneToOneField(User,on_delete=models.CASCADE)
-    profile_pic =  CloudinaryField('profile picture', blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = CloudinaryField('profile picture', blank=True)
 
-@receiver(post_save,sender=User)
-def create_user_profile(sender,instance,created,**kwargs):
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
     if created:
         profile.objects.create(user=instance)
 
+
 @receiver(post_save, sender=User)
-def save_user_profile(sender,instance,**kwargs):
+def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 
 class Customer(models.Model):
     id = models.AutoField(primary_key=True)
-    name=models.CharField(max_length=100)
-    email=models.EmailField()
-    password=models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    password = models.CharField(max_length=50)
+
     # profilePicture=models.CharField(max_length=500,default=None,blank=True,null=True)
 
     def __str__(self):
         return self.name
 
+
 class Room(models.Model):
-    room_no=models.AutoField(primary_key=True)
-    type=models.ForeignKey('Type',on_delete=models.SET_NULL,null=True)
+    room_no = models.AutoField(primary_key=True)
+    type = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.room_no
 
+
 class Type(models.Model):
-    id=models.AutoField(primary_key=True)
-    name=models.CharField(max_length=60,help_text="Enter name of the room")
-    capacity=models.IntegerField()
-    price=models.IntegerField(help_text="Enter price for per day stay")
-    wifi_service=models.BooleanField()
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=60, help_text="Enter name of the room")
+    capacity = models.IntegerField()
+    price = models.IntegerField(help_text="Enter price for per day stay")
+    wifi_service = models.BooleanField()
     breakfast_service = models.BooleanField()
     spa_service = models.BooleanField()
     room_service = models.BooleanField()
     minibar_service = models.BooleanField()
     gym_service = models.BooleanField()
     pool_service = models.BooleanField()
+
     class Meta:
-        ordering=["id"]
+        ordering = ["id"]
+
     def __str__(self):
         return self.name
 
 
 class Images(models.Model):
-    id=models.AutoField(primary_key=True)
-    room_type_id=models.ForeignKey('Type',on_delete=models.SET_NULL,null=True)
+    id = models.AutoField(primary_key=True)
+    room_type_id = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True)
     # url=models.URLField(help_text="URL for image stored")
-    url =  CloudinaryField('profile picture', blank=True)
+    url = CloudinaryField('profile picture', blank=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
+
 
 class Booking(models.Model):
-    id=models.AutoField(primary_key=True)
-    start_date=models.DateField()
-    end_date=models.DateField()
-    room_no=models.ForeignKey('Room',on_delete=models.SET_NULL,null=True)
-    price=models.IntegerField()
+    id = models.AutoField(primary_key=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    room_no = models.ForeignKey('Room', on_delete=models.SET_NULL, null=True)
+    price = models.IntegerField()
 
     def __str__(self):
         return self.id
 
+
 class Review(models.Model):
-    id=models.AutoField(primary_key=True)
-    user_id=models.ForeignKey('profile',on_delete=models.SET_NULL,null=True)
-    review=models.CharField(max_length=100,help_text="Enter comments")
-    rating=models.PositiveIntegerField()
-
-
+    id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey('profile', on_delete=models.SET_NULL, null=True)
+    review = models.CharField(max_length=100, help_text="Enter comments")
+    rating = models.PositiveIntegerField()
