@@ -79,6 +79,7 @@ def signuppage(request):
         name = request.POST['name']
         email = request.POST['email']
         password = request.POST['password']
+        image = request.FILES.get('image')
         username = email
 
         firstname = name.strip().split(' ')[0]
@@ -90,6 +91,7 @@ def signuppage(request):
 
             if created:
                 user.set_password(password)
+                user.profile.profile_pic=image
                 user.save()
 
             user = authenticate(username=username, password=password)
