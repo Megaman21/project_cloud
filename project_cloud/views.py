@@ -53,20 +53,19 @@ def editpage(request):
     # return HttpResponse(template.render(context, request))
     if request.method == "GET":
         user = request.user
-        return render(request, 'edit_profile.html', {'user': user})
+        return render(request, 'edit_profile.html')
     if request.method == "POST":
         # user=request.user
-        objx = request.user
+        user = request.user
         firstname=request.POST['firstname']
         lastname=request.POST['lastname']
         email=request.POST['email']
-        user = User.objects.get(username=objx.email)
         user.first_name=firstname
         user.last_name=lastname
         user.email=email
         user.save()
-        obj = request.user
-        return render(request,'edit_profile.html',{'user':obj})
+        return redirect('profilepage')
+
 
 def signuppage(request):
     if request.method == "GET":
