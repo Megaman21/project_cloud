@@ -89,10 +89,10 @@ def signuppage(request):
             user, created = User.objects.get_or_create(username=username, email=email, first_name=firstname,
                                                        last_name=lastname)
 
-            if created:
-                user.set_password(password)
-                user.profile.profile_pic=image
-                user.save()
+            # if created:
+            user.set_password(password)
+            user.profile.profile_pic=image
+            user.save()
 
             user = authenticate(username=username, password=password)
             login(request, user)
