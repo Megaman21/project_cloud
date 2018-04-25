@@ -16,6 +16,9 @@ class profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = CloudinaryField('profile picture', blank=True)
 
+    def __str__(self):
+        return str(self.id)
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
