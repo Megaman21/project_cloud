@@ -63,8 +63,9 @@
                 <div class="col-md-4 relative">
 {#                    <div class="avatar">#}
 {#                        <div class="avatar-bg center"></div>#}
-                    <img class="img-responsive" src="{{ user.profile.profile_pic }} " id="profile" style="width:290px;height:200px;">
-                    </div> <input type="file" accept="image/*" id="image" name="image" onchange="PreviewImage();"></div>
+                    <img class="img-responsive" src="{{ user.profile.profile_pic.public_id }}" id="profile" style="width:290px;height:200px;">
+                    </div> <input type="file" accept="image/*" id="image" name="image" onchange="PreviewImage();">
+                    </div>
                 <div class="col-md-8">
                     <h1>Profile </h1>
                     <hr>
