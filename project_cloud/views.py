@@ -123,7 +123,7 @@ def reviewpage(request):
         description = request.POST['message']
         reviewx = Review(user_id=user, review=description, rating=rating)
         reviewx.save()
-        return redirect(request, 'reviewpage')
+        return redirect('reviewpage')
     if request.user.is_authenticated:
         reviews_all = Review.objects.all()
         return render(request, 'review.html',
