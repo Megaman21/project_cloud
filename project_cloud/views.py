@@ -28,7 +28,8 @@ def loginpage(request):
         user = authenticate(username=email, password=password)
         if user:
             login(request, user)
-            return render(request, 'homepage.html')
+            # return render(request, 'homepage.html')
+            return redirect('home')
         else:
             return render(request, 'login.html')
 
@@ -99,7 +100,7 @@ def signuppage(request):
             user = authenticate(username=username, password=password)
             login(request, user)
 
-            return render(request, 'homepage.html')
+            return redirect('home')
     else:
         return render(request, 'signup.html')
 
