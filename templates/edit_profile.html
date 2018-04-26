@@ -64,8 +64,9 @@
                 <div class="col-md-4 relative">
 {#                    <div class="avatar">#}
 {#                        <div class="avatar-bg center"></div>#}
-                    {% cloudinary user.profile.profile_pic.public_id class="img-responsive" id="profile" width=290 height=200 crop="fill" %}
+{#                    {% cloudinary user.profile.profile_pic.public_id class="img-responsive" id="profile" width=290 height=200 crop="fill" %}#}
 {#                    <img class="img-responsive" id="profile" style="width:290px;height:200px;">#}
+                    <img  id="profile" src="{{ user.profile.profile_pic }}"  height="200px" width="290px">
                     <input type="file" accept="image/*" id="image" name="image" onchange="PreviewImage();">
                     </div>
 
