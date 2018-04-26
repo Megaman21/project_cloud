@@ -30,7 +30,7 @@ urlpatterns = [
     url('reviewpage', views.reviewpage, name='reviewpage'),
     url('register',views.doregister,name='register'),
     url('profilepage', views.editpage, name='profilepage'),
-    url(r'^logout/$', logout, {'next_page': '/homepage/'}, name='logout' ),
+    url(r'^logout/$', logout, {'next_page': '/home/'}, name='logout' ),
 
 
     # url('login', views.loginpage, {'template_name':'login.html'})
