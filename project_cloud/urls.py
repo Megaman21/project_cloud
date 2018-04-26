@@ -23,14 +23,14 @@ from django.contrib.auth.views import login
 urlpatterns = [
     path('admin/', admin.site.urls),
     # url(r'^$',views.index,name='test'),
-    url(r'^homepage/$',views.home,name='home'),
+    url(r'^/$',views.home,name='home'),
     url('login', views.loginpage, name='login'),
     url('signup', views.signuppage, name='signup'),
     url('bookpage', views.bookpage, name='bookpage'),
     url('reviewpage', views.reviewpage, name='reviewpage'),
     url('register',views.doregister,name='register'),
     url('profilepage', views.editpage, name='profilepage'),
-    url(r'^logout/$', logout, {'next_page': '/home/'}, name='logout' ),
+    url(r'^logout/$', logout, {'next_page': 'home'}, name='logout' ),
 
 
     # url('login', views.loginpage, {'template_name':'login.html'})
