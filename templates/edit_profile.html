@@ -31,18 +31,18 @@
         </div>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav navbar-left">
-                <li role="presentation" data-bs-hover-animate="pulse"><a href="home.html"
+                <li role="presentation" data-bs-hover-animate="pulse"><a href="{% url 'home' %}"
                                                                          style="color:rgb(137,13,73);font-size:20px;">Home </a>
                 </li>
                 <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="#"
                                                                                         style="color:rgb(137,13,73);font-size:20px;">Book
                     Room</a></li>
-                <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="#"
+                <li class="active" role="presentation" data-bs-hover-animate="pulse"><a href="{% url 'reviewpage' %}"
                                                                                         style="color:rgb(137,13,73);font-size:20px;">Review</a>
                 </li>
-                <li role="presentation" data-bs-hover-animate="pulse"><a href="about.html"
-                                                                         style="color:rgb(137,13,73);font-size:20px;">About </a>
-                </li>
+{#                <li role="presentation" data-bs-hover-animate="pulse"><a href="about.html"#}
+{#                                                                         style="color:rgb(137,13,73);font-size:20px;">About </a>#}
+{#                </li>#}
             </ul>
             <p class="navbar-text navbar-right actions" style="font-size:20px;"><a class="navbar-link login"
                                                                                    style="padding:30px;">{{user.first_name}} {{user.last_name}}</a>
