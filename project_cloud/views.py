@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -45,6 +46,7 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 
+@login_required
 def editpage(request):
     # template = loader.get_template('edit_profile.html')
     # context = {

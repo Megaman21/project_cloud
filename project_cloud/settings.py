@@ -157,3 +157,4 @@ cloudinary.config(
     api_secret="RGUyq9aTsKyd8x0L_rUhe9zQ19E"
 
 )
+LOGIN_URL = '/login/'
