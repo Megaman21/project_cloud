@@ -99,7 +99,6 @@ def signuppage(request):
 
             user = authenticate(username=username, password=password)
             login(request, user)
-
             return redirect('home')
     else:
         return render(request, 'signup.html')
