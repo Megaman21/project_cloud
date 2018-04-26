@@ -130,7 +130,8 @@ def reviewpage(request):
         reviewx = Review(user_id=user, review=description, rating=rating)
         reviewx.save()
         return redirect('reviewpage')
-    if request.user.is_authenticated:
+    # if request.user.is_authenticated:
+    else:
         reviews_all = Review.objects.all()
         return render(request, 'review.html',
                       {'reviews_all': reviews_all})
