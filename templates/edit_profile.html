@@ -66,7 +66,7 @@
 {#                        <div class="avatar-bg center"></div>#}
 {#                    {% cloudinary user.profile.profile_pic.public_id class="img-responsive" id="profile" width=290 height=200 crop="fill" %}#}
 {#                    <img class="img-responsive" id="profile" style="width:290px;height:200px;">#}
-                    <img  id="profile_pic" src="{{ user.profile.profile_pic }}"  height="200px" width="290px">
+                    <img  id="profile_pic" src=url({% static 'img/hotel-bus-office.jpg' %})  height="200px" width="290px">
                     <input type="file" accept="image/*" id="image" name="image" onchange="PreviewImage();">
                     </div>
 
