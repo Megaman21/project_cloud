@@ -66,8 +66,8 @@
 
 {#                    <div class="avatar">#}
 {#                        <div class="avatar-bg center"></div>#}
-                    {% cloudinary user.profile.profile_pic.public_id class="img-responsive" id="profile_pic" width=290 height=200 crop="fill" %}
-{#                    <img class="img-responsive" id="profile" style="width:290px;height:200px;">#}
+{#                    {% cloudinary user.profile.profile_pic.public_id class="img-responsive" id="profile_pic" width=290 height=200 crop="fill" %}#}
+                    <img class="img-responsive" id="profile_pic" src="{{ user.profile.profile_pic.url }}" style="width:290px;height:200px;">
 {#                    <img  id="profile_pic" src="{{ user.profile.profile_pic }}"  height="200px" width="290px">#}
                     <input type="file" accept="image/*" id="image" name="image" onchange="PreviewImage();">
                     </div>
