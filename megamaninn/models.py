@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth.views import logout
 
 # Create your models here.
 

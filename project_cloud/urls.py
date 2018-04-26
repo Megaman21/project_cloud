@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.contrib.auth.views import logout
 from django.contrib.auth.views import login
 
 urlpatterns = [
@@ -28,7 +29,8 @@ urlpatterns = [
     url('bookpage', views.bookpage, name='bookpage'),
     url('reviewpage', views.reviewpage, name='reviewpage'),
     url('register',views.doregister,name='register'),
-    url('profilepage', views.editpage, name='profilepage')
+    url('profilepage', views.editpage, name='profilepage'),
+    url(r'^logout/$', logout, {'next_page': '/homepage/'}, name='logout' ),
 
 
     # url('login', views.loginpage, {'template_name':'login.html'})
