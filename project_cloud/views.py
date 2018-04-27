@@ -63,11 +63,13 @@ def editpage(request):
         firstname=request.POST['firstname']
         lastname=request.POST['lastname']
         email=request.POST['email']
+        password=request.POST['password']
         image = request.FILES.get('image')
         user.first_name=firstname
         user.last_name=lastname
         user.email=email
         user.profile.profile_pic=image
+        user.set_password(password)
         user.save()
         return redirect('profilepage')
 
