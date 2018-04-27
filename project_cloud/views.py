@@ -67,7 +67,8 @@ def editpage(request):
         image = request.FILES.get('image')
         if image is not None:
             user.profile.profile_pic = image
-
+        if password is not None and password!="":
+            user.set_password(password)
         user.first_name=firstname
         user.last_name=lastname
         user.email=email
