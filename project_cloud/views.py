@@ -127,6 +127,7 @@ def bookpage(request):
         available_rooms=Room.objects.all()
         checkin=request.POST['checkin_date']
         checkout=request.POST['checkout_date']
+        print(checkin)
         x1=time.strptime(checkin, "%d")
         y1= time.strptime(checkin, "%m")
         z1= time.strptime(checkin, "%Y")
