@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 # from megamaninn.forms import SignUpForm
-from megamaninn.models import Review
+from megamaninn.models import Review, Room
 
 
 def index(request):
@@ -113,12 +113,16 @@ def signuppage(request):
 
 
 def bookpage(request):
-    template = loader.get_template('booking.html')
-    context = {
 
-    }
+    if request.method=="GET":
+     template = loader.get_template('booking.html')
+     context = {
 
-    return HttpResponse(template.render(context, request))
+     }
+
+     return HttpResponse(template.render(context, request))
+    else:
+        available_rooms=Room.objects.all()
 
 
 def reviewpage(request):
@@ -143,17 +147,17 @@ def reviewpage(request):
                       {'reviews_all': reviews_all})
 
 
-def doregister(request):
-    if request.method == "POST":
-        form = SignUpForm(request.POST)
-
-        form.save()
-        return redirect('login.html')
-        # else:
-        #     form = SignUpForm()
-        #     arg = {'forms': form}
-        #     return render(request, 'signup.html', arg)
-    else:
-        form = SignUpForm()
-        args = {'forms': form}
-        return render(request, 'signup.html', args)
+# def doregister(request):
+#     if request.method == "POST":
+#         form = SignUpForm(request.POST)
+#
+#         form.save()
+#         return redirect('login.html')
+#         # else:
+#         #     form = SignUpForm()
+#         #     arg = {'forms': form}
+#         #     return render(request, 'signup.html', arg)
+#     else:
+#         form = SignUpForm()
+#         args = {'forms': form}
+#         return render(request, 'signup.html', args)

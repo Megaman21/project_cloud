@@ -47,6 +47,7 @@ def save_user_profile(sender, instance, **kwargs):
 class Room(models.Model):
     room_no = models.AutoField(primary_key=True)
     type = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True)
+    available=models.BooleanField()
 
     def __str__(self):
         return self.room_no
