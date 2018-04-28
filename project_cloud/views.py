@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
-from megamaninn.forms import SignUpForm
+# from megamaninn.forms import SignUpForm
 from megamaninn.models import Review
 
 
