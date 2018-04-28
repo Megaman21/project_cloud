@@ -6,6 +6,7 @@ from django.shortcuts import redirect, render
 from django.template import loader
 # from megamaninn.forms import SignUpForm
 from megamaninn.models import Review, Room
+from datetime import date
 
 
 def index(request):
@@ -123,6 +124,13 @@ def bookpage(request):
      return HttpResponse(template.render(context, request))
     else:
         available_rooms=Room.objects.all()
+        checkin=request.POST['checkin_date']
+        checkout=request.POST['checkout_date']
+        f_date = date(checkin)
+        l_date = date(checkout)
+        delta = l_date - f_date
+        days=delta.days
+        print(days)
 
 
 def reviewpage(request):
