@@ -77,7 +77,7 @@ class Images(models.Model):
     id = models.AutoField(primary_key=True)
     room_type_id = models.ForeignKey('Type', on_delete=models.SET_NULL, null=True)
     # url=models.URLField(help_text="URL for image stored")
-    url = CloudinaryField('profile picture', blank=True)
+    url = CloudinaryField('room picture', blank=True)
 
     def __str__(self):
         return str(self.id)
