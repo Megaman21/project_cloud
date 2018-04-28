@@ -7,6 +7,7 @@ from django.template import loader
 # from megamaninn.forms import SignUpForm
 from megamaninn.models import Review, Room
 from datetime import date
+import time
 
 
 def index(request):
@@ -126,8 +127,14 @@ def bookpage(request):
         available_rooms=Room.objects.all()
         checkin=request.POST['checkin_date']
         checkout=request.POST['checkout_date']
-        f_date = date(checkin)
-        l_date = date(checkout)
+        x1=time.strptime(checkin, "%d")
+        y1= time.strptime(checkin, "%m")
+        z1= time.strptime(checkin, "%Y")
+        x2 = time.strptime(checkout, "%d")
+        y2 = time.strptime(checkout, "%m")
+        z2 = time.strptime(checkout, "%Y")
+        f_date = date(z1, y1, x1)
+        l_date = date(z2, y2, x2)
         delta = l_date - f_date
         days=delta.days
         print(days)
