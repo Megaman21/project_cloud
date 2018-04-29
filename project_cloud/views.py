@@ -146,7 +146,7 @@ def bookpage(request):
             price.append(room.type.price*days)
         rooms_data = zip(available_rooms,images1,images2,price)
         return render(request, 'searchresults.html',
-                      {'rooms_data': rooms_data},{'check_in':checkin},{'check_out':checkout},{'Days':days})
+                      {'rooms_data': rooms_data,'check_in':checkin,'check_out':checkout,'Days':days})
 
 
 
