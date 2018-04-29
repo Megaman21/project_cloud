@@ -124,7 +124,7 @@ def bookpage(request):
 
      return HttpResponse(template.render(context, request))
     else:
-        available_rooms=Room.objects.all()
+        available_rooms=Room.objects.all().filter(available=True)
         checkin=request.POST['checkin_date']
         checkout=request.POST['checkout_date']
         print(checkin)
