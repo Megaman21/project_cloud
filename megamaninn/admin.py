@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
-from megamaninn.models import profile, Review
+from megamaninn.models import profile, Review, Booking
 from megamaninn.models import Room
 from megamaninn.models import Type
 from megamaninn.models import Images
@@ -32,3 +32,4 @@ admin.site.register(Room)
 admin.site.register(Type)
 admin.site.register(Images)
 admin.site.register(Review)
+admin.site.register(Booking)
