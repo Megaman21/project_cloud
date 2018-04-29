@@ -144,7 +144,7 @@ def bookpage(request):
             images2.append(room.type.Images_set.second())
             price.append(room.type.price*days)
         rooms_data = zip(available_rooms,images1,images2,price)
-        return render(request, 'review.html',
+        return render(request, 'searchresults.html',
                       {'rooms_data': rooms_data})
 
 
@@ -170,7 +170,7 @@ def reviewpage(request):
     # if request.user.is_authenticated:
     else:
         reviews_all = Review.objects.all()
-        return render(request, 'searchresults.html',
+        return render(request, 'review.html',
                       {'reviews_all': reviews_all})
 
 
