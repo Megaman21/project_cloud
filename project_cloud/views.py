@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template import loader
 # from megamaninn.forms import SignUpForm
-from megamaninn.models import Review, Room, Type
+from megamaninn.models import Review, Room, Type, Booking
 from datetime import date
 import time
 
@@ -145,6 +145,9 @@ def bookpage(request):
             images2.append(room.type.images_set.all()[0])
             price.append(room.type.price*days)
         rooms_data = zip(available_rooms,images1,images2,price)
+        request.__setattr__('Days',days)
+        request.__setattr__('checkin',checkin)
+        request.__setattr__('checkout',checkout)
         return render(request, 'searchresults.html',
                       {'rooms_data': rooms_data})
 
@@ -174,6 +177,20 @@ def reviewpage(request):
         return render(request, 'review.html',
                       {'reviews_all': reviews_all})
 
+def bookroom(request):
+
+    id=request.POST['roomid']
+    checkin=request.__getattribute__('checkin')
+    checkout=request.__getattribute__('checkout')
+    days=request.__getattribute__('Days')
+    room=Room.objects.get(room_no=id)
+    p=room.type.price
+    price=days*p
+    booking=Booking(start_date=checkin,end_date=checkout,room_no=room,price=price)
+    booking.save()
+    room.available=False
+    room.save()
+    return redirect('home')
 
 # def doregister(request):
 #     if request.method == "POST":
