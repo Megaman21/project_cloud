@@ -33,7 +33,7 @@
                         <li role="presentation"><a href="{% url 'bookpage' %}" style="color:#f72b2b;"><strong>Book Room</strong></a></li>
                          <li role="presentation"><a href="{% url 'reviewpage' %}" style="color:#f72b2b;"><strong>Review</strong></a></li>
                         <li role="presentation"><a href="{% url 'profilepage' %}" style="color:#f72b2b;"><strong>Profile</strong></a></li>
-                        <li role="presentation"><a href="#" style="color:#f72b2b;"><strong>About </strong></a></li>
+{#                        <li role="presentation"><a href="#" style="color:#f72b2b;"><strong>About </strong></a></li>#}
                     </ul>
                    <p class="navbar-text navbar-right actions">
                        {% if request.user.is_authenticated %}
@@ -81,17 +81,17 @@
     <div class="article-list" style="margin-top:30px;">
         <div class="container">
             <div class="row articles">
-                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="assets/img/crew.jpg" style="height:195.234px;">
+                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="{{% static 'img/room-service (1).jpg' %}}" style="height:195.234px;">
                     <h3 class="name">Always at your service</h3>
                     <p class="description">Our team is active and available 24/7 to provide you best services.</p>
                     <a href="#" class="action"></a>
                 </div>
-                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="assets/img/plane.jpg" style="height:195.234px;">
-                    <h3 class="name">20+ International and 30+ Domestic Flights</h3>
-                    <p class="description">With our 20+ International and 30+ Domestic flights everyday travel to your desired location cheaply and safely.</p>
+                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="{{% static 'img/hpic.jpg' %}}" style="height:195.234px;">
+                    <h3 class="name">20+ International and 30+ Domestic Branches</h3>
+                    <p class="description">With our 20+ International and 30+ Domestic hotels make your everyday stay to your desired location convenient and safe.</p>
                     <a href="#" class="action"></a>
                 </div>
-                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="assets/img/business.jpg" style="height:195.234px;">
+                <div class="col-md-4 col-sm-6 item"><img class="img-responsive" src="{{% static 'img/room-service.jpg' %}}" style="height:195.234px;">
                     <h3 class="name">We Make Your Trip Memorable</h3>
                     <p class="description">Our team works day and night to provide you best services. to make your trip comfortable and memorable</p>
                     <a href="#" class="action"></a>

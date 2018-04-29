@@ -153,7 +153,7 @@ def bookpage(request):
 
         # print(days)
 
-
+@login_required
 def reviewpage(request):
     # template = loader.get_template('review.htmls')
     # context = {
