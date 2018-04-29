@@ -7,13 +7,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-      <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
-     <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
-     <link rel="stylesheet" href="{% static 'css/Article-List.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Article-List.css' %}">
     <link rel="stylesheet" href="{% static 'css/Footer-Clean.css' %}">
     <link rel="stylesheet" href="{% static 'css/Footer-Dark.css' %}">
-   <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
-     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navigation-with-Button1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/material-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/MaterialIcons-Regular.eot' %}">
+    <link rel="stylesheet" href="{% static 'css/MaterialIcons-Regular.ttf' %}">
+    <link rel="stylesheet" href="{% static 'css/MaterialIcons-Regular.woff' %}">
+    <link rel="stylesheet" href="{% static 'css/MaterialIcons-Regular.woff2' %}">
+    <link rel="stylesheet" href="{% static 'css/MaterialIcons-Regular.svg' %}">
+
+
 </head>
 
 <body>
@@ -56,30 +64,53 @@
 
                 <tr>
                     <th style="text-align:center;">Room</th>
-{#                    <th style="text-align:center;">Room View</th>#}
+                    {#                    <th style="text-align:center;">Room View</th>#}
                     <th style="text-align:center;"><strong>Room View</strong></th>
                     <th style="text-align:center;"><strong>Room View</strong></th>
                     <th style="text-align:center;"><strong>Total Price</strong></th>
-{#                    <th style="text-align:center;">Class</th>#}
-{#                    <th style="text-align:center;"><strong>Total Price</strong></th>#}
+                    {#                    <th style="text-align:center;">Class</th>#}
+                    {#                    <th style="text-align:center;"><strong>Total Price</strong></th>#}
                 </tr>
                 </thead>
                 <tbody>
                 {% for room in rooms_data %}
                     <tr>
                         <td><h5>{{ room.0.type.name }}</h5></td>
-{#                        <td><h5><img class="img-responsive" id="r1" src="{{ room.1.url.url }}" style="width:300px;height:300px;"></h5></td>#}
-                         <td><h5>{% cloudinary room.1.url.public_id class="img-responsive" id="r1" width=300 height=300 crop="fill" %}</h5></td>
-                        <td><h5><img class="img-responsive" id="r2" src="{{ room.2.url.url }}" style="width:300px;height:300px;"></h5></td>
+                        {#                        <td><h5><img class="img-responsive" id="r1" src="{{ room.1.url.url }}" style="width:300px;height:300px;"></h5></td>#}
+                        <td>
+                            <h5>{% cloudinary room.1.url.public_id class="img-responsive" id="r1" width=300 height=300 crop="fill" %}</h5>
+                        </td>
+                        {#                        <td><h5><img class="img-responsive" id="r2" src="{{ room.2.url.url }}" style="width:300px;height:300px;"></h5></td>#}
+                        <td><h5>
+                            {% if room.0.type.pool_service %}
+                                <i class="material-icons">pool</i>
+                            {% endif %}
+                            {% if room.0.type.room_service %}
+                                <i class="material-icons">room_service</i>
+                            {% endif %}
+                            {% if room.0.type.minibar_service %}
+                                <i class="material-icons">local_bar</i>
+                            {% endif %}
+                            {% if room.0.type.breakfast_service %}
+                                <i class="material-icons">free_breakfast</i>
+                            {% endif %}
+                            {% if room.0.type.laundry_service %}
+                                <i class="material-icons">local_laundry_service</i>
+                            {% endif %}
+                            {% if room.0.type.wifi_service %}
+                                <i class="material-icons">wifi</i>
+                            {% endif %}
+
+                        </h5></td>
                         <td><h5>{{ room.3 }}</h5></td>
 
                         <td>
                             <form method="post" action="{% url 'bookroom' %}">
                                 {% csrf_token %}
                                 <input type="text" hidden name="roomid" value="{{ room.0.room_no }}">
-                                 <input type="text" hidden name="days" value="{{ Days }}">
-                                 <input type="text" hidden name="checkin" value="{{ check_in }}">
-                                 <input type="text" hidden name="checkout" value="{{ check_out }}">
+                                <input type="text" hidden name="days" value="{{ Days }}">
+                                <input type="text" hidden name="checkin" value="{{ check_in }}">
+                                <input type="text" hidden name="checkout" value="{{ check_out }}">
                                 <button type="submit">Book Seats</button>
                             </form>
                         </td>
@@ -121,9 +152,9 @@
         </div>
     </div>
 </footer>
- <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
- <script src="{% static 'js/myjs.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/myjs.js' %}"></script>
 </body>
 
 </html>

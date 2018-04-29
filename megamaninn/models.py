@@ -60,7 +60,7 @@ class Type(models.Model):
     price = models.IntegerField(help_text="Enter price for per day stay")
     wifi_service = models.BooleanField()
     breakfast_service = models.BooleanField()
-    spa_service = models.BooleanField()
+    laundry_service = models.BooleanField()
     room_service = models.BooleanField()
     minibar_service = models.BooleanField()
     gym_service = models.BooleanField()
