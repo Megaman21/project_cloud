@@ -28,7 +28,7 @@
 <div>
     <nav class="navbar navbar-default navigation-clean-button" style="background-color:#ffc107;">
         <div class="container">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">Shojo Airlines</a>
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href={% url 'home' %}>Mega's Inn</a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
                         class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span></button>
@@ -55,7 +55,7 @@
         </div>
     </nav>
 </div>
-<div style="text-align:center;padding:40px;background:url(&quot;assets/img/plane.jpg&quot;)no-repeat;background-size:cover;">
+<div style="text-align:center;padding:40px;background:url({% static 'img/hotel-overview-background-2.jpg' %})no-repeat;background-size:cover;">
     <div class="jumbotron"
          style="border-radius:20px;padding:40px;background:rgba(255,255,255,0.75);margin-top:100px;text-align:center;position:relative;">
         <div class="table-responsive" style="text-align:center;position:relative;">
@@ -66,7 +66,7 @@
                     <th style="text-align:center;">Room</th>
                     {#                    <th style="text-align:center;">Room View</th>#}
                     <th style="text-align:center;"><strong>Room View</strong></th>
-                    <th style="text-align:center;"><strong>Room View</strong></th>
+                    <th style="text-align:center;"><strong>Features</strong></th>
                     <th style="text-align:center;"><strong>Total Price</strong></th>
                     {#                    <th style="text-align:center;">Class</th>#}
                     {#                    <th style="text-align:center;"><strong>Total Price</strong></th>#}
@@ -78,7 +78,7 @@
                         <td><h5>{{ room.0.type.name }}</h5></td>
                         {#                        <td><h5><img class="img-responsive" id="r1" src="{{ room.1.url.url }}" style="width:300px;height:300px;"></h5></td>#}
                         <td>
-                            <h5>{% cloudinary room.1.url.public_id class="img-responsive" id="r1" width=300 height=300 crop="fill" %}</h5>
+                            <h5>{% cloudinary room.1.url.public_id class="img-responsive" id="r1" width=400 height=300 crop="fill" %}</h5>
                         </td>
                         {#                        <td><h5><img class="img-responsive" id="r2" src="{{ room.2.url.url }}" style="width:300px;height:300px;"></h5></td>#}
                         <td><h5>
