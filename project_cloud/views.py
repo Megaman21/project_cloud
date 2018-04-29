@@ -181,11 +181,15 @@ def bookroom(request):
     days = request.POST['days']
     checkin = request.POST['checkin']
     checkout = request.POST['checkout']
+    x1, y1, z1 = checkin.split('-')
+    x2, y2, z2 = checkout.split('-')
+    f_date = date(int(x1), int(y1), int(z1))
+    l_date = date(int(x2), int(y2), int(z2))
     # id = request.POST['roomid']
     room=Room.objects.get(room_no=id)
     p=room.type.price
     price=days*p
-    booking=Booking(start_date=checkin,end_date=checkout,room_no=room,price=price)
+    booking=Booking(start_date=f_date,end_date=l_date,room_no=room,price=price)
     booking.save()
     room.available=False
     room.save()
