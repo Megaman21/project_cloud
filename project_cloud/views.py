@@ -170,7 +170,7 @@ def reviewpage(request):
     # if request.user.is_authenticated:
     else:
         reviews_all = Review.objects.all()
-        return render(request, 'review.html',
+        return render(request, 'searchresults.html',
                       {'reviews_all': reviews_all})
 
 
