@@ -39,17 +39,20 @@
                                                                              style="color:rgb(137,13,73);font-size:20px;">Home </a>
                     </li>
 
-                    <li role="presentation" data-bs-hover-animate="pulse"><a href="booking.jsp"
-                                                                             style="color:rgb(137,13,73);font-size:20px;">Book </a>
+                    <li role="presentation" data-bs-hover-animate="pulse"><a href="{% url 'bookpage' %}"
+                                                                             style="color:rgb(137,13,73);font-size:20px;">Book Room </a>
                     </li>
-                    <li role="presentation" data-bs-hover-animate="pulse"><a href="about.html"
-                                                                             style="color:rgb(137,13,73);font-size:20px;">About </a>
+                    <li role="presentation" data-bs-hover-animate="pulse"><a href="{% url 'profilepage' %}"
+                                                                             style="color:rgb(137,13,73);font-size:20px;">Profile </a>
+                    </li>
+                    <li role="presentation" data-bs-hover-animate="pulse"><a href="{% url 'reviewpage' %}"
+                                                                             style="color:rgb(137,13,73);font-size:20px;">Review</a>
                     </li>
                 </ul>
                 <p class="navbar-text navbar-right actions" style="font-size:20px;"><a class="navbar-link login"
-                                                                                       href="signin.jsp"
-                                                                                       style="padding:30px;">Customer</a>
-                    <a class="btn btn-default action-button" role="button" href="signup.html"
+                                                                                       href="signin.jsp" disabled
+                                                                                       style="padding:30px;">{{ user.first_name }} {{ user.last_name }}</a>
+                    <a class="btn btn-default action-button" role="button" href="{% url 'logout' %}"
                        style="font-size:20px;background-color:#eb3b60;">Sign Out</a></p>
             </div>
         </div>
@@ -78,7 +81,7 @@
                         <td><h5>{{ room.0.type.name }}</h5></td>
                         {#                        <td><h5><img class="img-responsive" id="r1" src="{{ room.1.url.url }}" style="width:300px;height:300px;"></h5></td>#}
                         <td>
-                            <h5>{% cloudinary room.1.url.public_id class="img-responsive" id="r1" width=400 height=300 crop="fill" %}</h5>
+                            <h5>{% cloudinary room.1.url.public_id class="img-responsive" id="r1" width=500 height=300 crop="fill" %}</h5>
                         </td>
                         {#                        <td><h5><img class="img-responsive" id="r2" src="{{ room.2.url.url }}" style="width:300px;height:300px;"></h5></td>#}
                         <td><h5>
