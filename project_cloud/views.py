@@ -137,10 +137,16 @@ def bookpage(request):
         roomtypes = Type.objects.all()
         images1 = []
         images2 = []
+        price=[]
+
         for room in available_rooms:
             images1.append(room.type.Images_set.first())
             images2.append(room.type.Images_set.second())
-        rooms_data = zip(available_rooms,images1,images2)
+            price.append(room.type.price*days)
+        rooms_data = zip(available_rooms,images1,images2,price)
+        return render(request, 'review.html',
+                      {'rooms_data': rooms_data})
+
 
 
         # print(days)
