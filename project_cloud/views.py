@@ -157,7 +157,7 @@ def bookpage(request):
 
 
 def reviewpage(request):
-    # template = loader.get_template('review.html')
+    # template = loader.get_template('review.htmls')
     # context = {
     #
     # }
