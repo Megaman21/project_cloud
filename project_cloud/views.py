@@ -140,8 +140,8 @@ def bookpage(request):
         price=[]
 
         for room in available_rooms:
-            images1.append(room.type.Images_set.first())
-            images2.append(room.type.Images_set.second())
+            images1.append(room.type.images_set.first())
+            images2.append(room.type.images_set.second())
             price.append(room.type.price*days)
         rooms_data = zip(available_rooms,images1,images2,price)
         return render(request, 'searchresults.html',
