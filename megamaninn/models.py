@@ -88,6 +88,7 @@ class Booking(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     room_no = models.ForeignKey('Room', on_delete=models.SET_NULL, null=True)
+    user_id=models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     price = models.IntegerField()
 
     def __str__(self):
