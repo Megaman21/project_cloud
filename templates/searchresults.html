@@ -76,6 +76,9 @@
                             <form method="post" action="{% url 'bookroom' %}">
                                 {% csrf_token %}
                                 <input type="text" hidden name="roomid" value="{{ room.0.room_no }}">
+                                 <input type="text" hidden name="days" value="{{ Days }}">
+                                 <input type="text" hidden name="checkin" value="{{ check_in }}">
+                                 <input type="text" hidden name="checkout" value="{{ check_out }}">
                                 <button type="submit">Book Seats</button>
                             </form>
                         </td>

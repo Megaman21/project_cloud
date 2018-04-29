@@ -145,11 +145,8 @@ def bookpage(request):
             images2.append(room.type.images_set.all()[0])
             price.append(room.type.price*days)
         rooms_data = zip(available_rooms,images1,images2,price)
-        request.__setattr__('Days',days)
-        request.__setattr__('checkin',checkin)
-        request.__setattr__('checkout',checkout)
         return render(request, 'searchresults.html',
-                      {'rooms_data': rooms_data})
+                      {'rooms_data': rooms_data},{'check_in':checkin},{'check_out':checkout},{'Days':days})
 
 
 
@@ -181,9 +178,10 @@ def bookroom(request):
 
 
     id=request.POST['roomid']
-    checkin=request.__getattr__('checkin')
-    checkout=request.__getattr__('checkout')
-    days=request.__getattr__('Days')
+    days = request.POST['days']
+    checkin = request.POST['checkin']
+    checkout = request.POST['checkout']
+    # id = request.POST['roomid']
     room=Room.objects.get(room_no=id)
     p=room.type.price
     price=days*p
