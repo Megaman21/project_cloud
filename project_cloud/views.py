@@ -114,6 +114,7 @@ def signuppage(request):
         return render(request, 'signup.html')
 
 
+@login_required
 def bookpage(request):
 
     if request.method=="GET":
