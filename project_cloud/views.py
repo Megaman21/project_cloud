@@ -179,10 +179,11 @@ def reviewpage(request):
 
 def bookroom(request):
 
+
     id=request.POST['roomid']
-    checkin=request.__getattribute__('checkin')
-    checkout=request.__getattribute__('checkout')
-    days=request.__getattribute__('Days')
+    checkin=request.__getattr__('checkin')
+    checkout=request.__getattr__('checkout')
+    days=request.__getattr__('Days')
     room=Room.objects.get(room_no=id)
     p=room.type.price
     price=days*p
