@@ -91,7 +91,7 @@ class Booking(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class Review(models.Model):
