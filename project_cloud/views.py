@@ -176,7 +176,7 @@ def reviewpage(request):
 
 def bookroom(request):
 
-
+    user=request.user
     id=request.POST['roomid']
     days = request.POST['days']
     checkin = request.POST['checkin']
@@ -189,7 +189,7 @@ def bookroom(request):
     room=Room.objects.get(room_no=id)
     p=room.type.price
     price=int(days)*p
-    booking=Booking(start_date=f_date,end_date=l_date,room_no=room,price=price)
+    booking=Booking(start_date=f_date,end_date=l_date,room_no=room,user_id=user,price=price)
     booking.save()
     room.available=False
     room.save()
