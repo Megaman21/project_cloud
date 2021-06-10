@@ -3,7 +3,7 @@ certifi==2018.4.16
 cloudinary==1.11.0
 dj-database-url==0.3.0
 dj-static==0.0.6
-Django==2.0.4
+Django==2.2.24
 gunicorn==19.6.0
 html5lib==0.9999999
 Markdown==2.6.6
